@@ -14,7 +14,6 @@ import spacy
 import torch
 import numpy as np
 from pdfminer.high_level import extract_text
-# Yahan BertTokenizer ki jagah AutoTokenizer aur AutoModel lagaya hai
 from transformers import AutoTokenizer, AutoModel
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.corpus import stopwords
@@ -45,9 +44,9 @@ except OSError:
     download("en_core_web_sm")
     nlp = spacy.load('en_core_web_sm')
 
-# Yahan RAM bachane ke liye distilbert use kiya hai (Yeh fast aur light hai)
-tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')
-model = AutoModel.from_pretrained('distilbert-base-uncased')
+# Yahan RAM bachane ke liye TinyBERT use kiya hai (Sirf 17 MB ka super-light model)
+tokenizer = AutoTokenizer.from_pretrained('prajjwal1/bert-tiny')
+model = AutoModel.from_pretrained('prajjwal1/bert-tiny')
 
 # ==========================================
 # 2. DATABASE SETUP (SIMULTANEOUS SAVING)
