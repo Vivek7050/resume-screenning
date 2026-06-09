@@ -7,3 +7,5 @@ scikit-learn
 numpy
 pandas
 python-multipart
+--find-links https://download.pytorch.org/whl/cpu
+torch==2.2.0+cpu
