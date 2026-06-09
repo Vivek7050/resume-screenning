@@ -10,3 +10,4 @@ scikit-learn
 nltk
 python-multipart
 safetensors
+sentencepiece
